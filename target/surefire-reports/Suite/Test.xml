@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="DELL" name="com.Info.MainTest.TestRunner" tests="9" failures="0" timestamp="18 May 2017 17:30:27 GMT" time="943.809" errors="0">
+  <testcase name="show" time="0.007" classname="com.automation.maven.MavenDemo"/>
+  <testcase name="LaunchApplichation" time="82.041" classname="com.Info.MainTest.TestRunner"/>
+  <testcase name="To_Verify_EMI_CalculatorPage" time="20.419" classname="com.Info.MainTest.TestRunner"/>
+  <testcase name="toValidate_EnquiryForm" time="130.327" classname="com.Info.MainTest.TestRunner"/>
+  <testcase name="toValidateHomeLoagPage" time="20.489" classname="com.Info.MainTest.TestRunner"/>
+  <testcase name="To_handle_Agent_Search" time="202.131" classname="com.Info.MainTest.TestRunner"/>
+  <testcase name="To_handle_Agent_Search" time="45.152" classname="com.Info.MainTest.TestRunner"/>
+  <testcase name="toValidate_post_Requirment_Page" time="39.55" classname="com.Info.MainTest.TestRunner"/>
+  <testcase name="toValidate_postpropertydetails" time="237.862" classname="com.Info.MainTest.TestRunner"/>
+</testsuite>

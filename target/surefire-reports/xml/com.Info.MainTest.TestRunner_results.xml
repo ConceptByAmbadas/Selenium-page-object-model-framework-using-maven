@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="8"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="777.971">
+  <properties />
+  
+  
+            <testcase name="To_Verify_EMI_CalculatorPage" time="20.419" classname="com.Info.MainTest.TestRunner" />
+                <testcase name="toValidate_postpropertydetails" time="237.862" classname="com.Info.MainTest.TestRunner" />
+                <testcase name="LaunchApplichation" time="82.041" classname="com.Info.MainTest.TestRunner" />
+                <testcase name="To_handle_Agent_Search" time="202.131" classname="com.Info.MainTest.TestRunner" />
+                <testcase name="toValidate_EnquiryForm" time="130.327" classname="com.Info.MainTest.TestRunner" />
+                <testcase name="toValidate_post_Requirment_Page" time="39.550" classname="com.Info.MainTest.TestRunner" />
+                <testcase name="toValidateHomeLoagPage" time="20.489" classname="com.Info.MainTest.TestRunner" />
+                <testcase name="To_handle_Agent_Search" time="45.152" classname="com.Info.MainTest.TestRunner" />
+      
+</testsuite>

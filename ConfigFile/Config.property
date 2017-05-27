@@ -1,0 +1,8 @@
+chromeDriver=E://Seleium_data//All_FireFox_version//chromedriver.exe
+IEDriver=""
+URL=http://propchilli.com
+//file:///E:/Registration.htm
+ExcelFile=E:\\StudyWorkpace\\com.automation.maven\\TestDataFile\\Datasheet.xlsx
+browser=chrome
+
+//firefox

@@ -1,0 +1,1 @@
+java -cp bin;lib/* or.testng.TestNG testng.xml >>log

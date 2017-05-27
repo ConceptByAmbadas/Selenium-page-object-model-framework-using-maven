@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Test(failed)" preserve-order="false">
+    <classes>
+      <class name="com.Info.MainTest.TestRunner">
+        <methods>
+          <include name="To_handle_Agent_Search" invocation-numbers="1"/>
+          <include name="getReport"/>
+          <include name="cleanUp"/>
+          <include name="Reportsetup"/>
+          <include name="endTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
