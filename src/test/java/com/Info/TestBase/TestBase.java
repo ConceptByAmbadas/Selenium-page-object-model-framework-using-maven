@@ -14,6 +14,8 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.hssf.record.common.UnicodeString.ExtRst;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -23,6 +25,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import com.Info.ExcelReader.DataRepository;
 import com.Info.Utility.Driver;
@@ -38,6 +41,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class TestBase {
+	
+	public static final Logger log=Logger.getLogger(TestBase.class.getName());
 	public static Properties prop;
 	public static String dest;
 	public static String time;
@@ -66,16 +71,19 @@ public class TestBase {
 	public void setUp() {
 		try {
 			Driver.Initialize();
+			String logpath="log4j.properties";
+			PropertyConfigurator.configure(logpath);
 		} catch (Exception ex) {
 			System.out.println("Exception is" + ex.getMessage());
 		}
 	}
+
+	
 	@BeforeSuite
 	public void Reportsetup()
 	{
 		try
 		{
-			
 			//report=new ExtentReports("E://Reports//Test"+System.currentTimeMillis()+".html",true);
 			report=new ExtentReports("E://StudyWorkpace//com.automation.maven//ReportGenration//Report"+System.currentTimeMillis()+".html",true);
 			report.addSystemInfo("HostName", "Pravin")

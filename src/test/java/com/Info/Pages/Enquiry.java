@@ -16,9 +16,7 @@ public class Enquiry extends TestBase{
 	
 
 	final WebDriver driver;
-	//ReadProperty config=new ReadProperty();
-	//ExcelDataConfig  readconfig=new ExcelDataConfig(config.getExeclDataPath());
-
+	static Logger log=Logger.getLogger(Enquiry.class.getName());
 	public Enquiry(WebDriver driver) 
 	{
 
@@ -38,6 +36,7 @@ public class Enquiry extends TestBase{
 		//"Pravin", "pravin@gmail.com", "Looking for 2 BHK at aundh", "9270363789"
 		try
 		{
+		log.info("==============Filling Enquiry form=============");
 		int value = rand.nextInt(20);
 		String Email = String.valueOf(value)+email;
 		driver.findElement(Home_Link).click();

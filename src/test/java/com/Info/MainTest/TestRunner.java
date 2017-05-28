@@ -189,8 +189,6 @@ public class TestRunner extends TestBase {
 	@Test(dataProvider = "HomeLoanData", priority = 4)
 	public void toValidateHomeLoagPage(String Loan_Amt, String Name , String Email,String Mobile,String Pre_Bank,String Bank_Name,String runMode)
 	{
-		System.out.println("in second method");
-		
 		test=report.startTest("To apply for HomeLoan");
 		test.log(LogStatus.INFO, "Verifying details on Homeloan page");
 		if(runMode.equals("N"))

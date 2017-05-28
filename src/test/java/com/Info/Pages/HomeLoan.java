@@ -3,6 +3,7 @@ package com.Info.Pages;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ import com.Info.TestBase.TestBase;
 public class HomeLoan extends TestBase{
 	
 	final WebDriver driver;
-	
+	static Logger log=Logger.getLogger(HomeLoan.class.getName());
 	public HomeLoan(WebDriver driver)
 	{
 		this.driver=driver;

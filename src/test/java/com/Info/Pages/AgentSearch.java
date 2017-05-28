@@ -7,6 +7,7 @@ import static org.testng.Assert.assertTrue;
 import java.awt.List;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -17,7 +18,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class AgentSearch extends TestBase{
 	final WebDriver driver;
 
-
+	static Logger log=Logger.getLogger(AgentSearch.class.getName());
 	public AgentSearch(WebDriver driver)
 	{
 		this.driver=driver;

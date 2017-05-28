@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 public class PostRequirement {
 
 	final WebDriver driver;
-	static Logger log=Logger.getLogger(Postproperty.class.getName());
+	static Logger log=Logger.getLogger(PostRequirement.class.getName());
 
 	public PostRequirement(WebDriver driver) 
 	{
