@@ -4,6 +4,7 @@
 <listeners> 
 <listener class-name="org.uncommons.reportng.HTMLReporter"/> 
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+<listener class-name="com.Info.Listner.Listners"/>
  </listeners>
   <test name="Test">
     <classes>
