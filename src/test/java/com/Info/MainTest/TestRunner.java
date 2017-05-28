@@ -54,10 +54,10 @@ public class TestRunner extends TestBase {
 		loan=PageFactory.initElements(Driver.Instance, HomeLoan.class);
 		agent_search=PageFactory.initElements(Driver.Instance, AgentSearch.class);
 		Emi_Cal=PageFactory.initElements(Driver.Instance, EMI_CAL.class);
-		
+
 		test=report.startTest("Launch application");
 		String title = Driver.Instance.getTitle();
-		
+
 		if (title.contains("Propchilli")) {
 
 			test.log(LogStatus.INFO, "Application is up and running");
@@ -70,8 +70,6 @@ public class TestRunner extends TestBase {
 			Assert.assertTrue(false);
 			//updateResult(indexSI++, "Launch Application","Issue in launching application ", "Fail", "Launch Application Test",false);
 		}
-		
-
 	}
 
 	@DataProvider
@@ -91,24 +89,23 @@ public class TestRunner extends TestBase {
 			}
 			else
 			{
-			req.to_Fill_post_requrimentPage(property_type, city, build_area_from, build_area_to, username, email, password, mobile);
-			// report.setTestDisplayOrder(TestDisplayOrder.NEWEST_FIRST);
+				req.to_Fill_post_requrimentPage(property_type, city, build_area_from, build_area_to, username, email, password, mobile);
+				// report.setTestDisplayOrder(TestDisplayOrder.NEWEST_FIRST);
 
-			boolean msg1 = req.To_verify_postReq_details();
-			if (msg1 == true) {
-				Assert.assertTrue(true, "User has successfully post requirment");
-				test.log(LogStatus.PASS, "User has successfully post requirment");
-				//updateResult(indexSI++, "Fill Property Requirment","Requirment is posted successfully", "Pass", "Fill post reuqirmrnt details",true);
-			} else {
-				Assert.assertTrue(false, "Requirment is not posted due to some issue");
-				test.log(LogStatus.FAIL, "Requirment is not posted due to some issue");
-				
-				//updateResult(indexSI++, "Fill Property Requirment"," Issue in filling property requriment", "Fail", "Fill post reuqirmrnt details",true);
-			}}
+				boolean msg1 = req.To_verify_postReq_details();
+				if (msg1 == true) {
+					Assert.assertTrue(true, "User has successfully post requirment");
+					test.log(LogStatus.PASS, "User has successfully post requirment");
+					//updateResult(indexSI++, "Fill Property Requirment","Requirment is posted successfully", "Pass", "Fill post reuqirmrnt details",true);
+				} else {
+					Assert.assertTrue(false, "Requirment is not posted due to some issue");
+					test.log(LogStatus.FAIL, "Requirment is not posted due to some issue");
+					//updateResult(indexSI++, "Fill Property Requirment"," Issue in filling property requriment", "Fail", "Fill post reuqirmrnt details",true);
+				}}
 		} catch (Exception ex) {
 			System.out.println("Exception is post req is" + ex.getMessage());
 		}
-		
+
 	}
 
 	@DataProvider
@@ -122,24 +119,24 @@ public class TestRunner extends TestBase {
 		try {
 			test = report.startTest("Validating Enquiry form");
 			test.log(LogStatus.INFO, "Validating enquiry form");
-		
+
 			if (runMode.equals("N")) {
 				test.log(LogStatus.SKIP, "Skip test case ");
 				throw new SkipException("Skipping the test");
 			}
 			else
 			{
-			enquiry.To_Fill_Customer_Enquiry_Details(Name, email, Description, Mobile);
-			boolean msg2 = enquiry.To_verify_Customer_Enquiry_form();
-			if (msg2 == true) {
-				Assert.assertTrue(true, "User has successfully Fill enquiry form");
-				test.log(LogStatus.PASS, "User has successfully Fill enquiry form");
-				//updateResult(indexSI++, "Fill Enquiry Details"," Enquiry details filled succusfully", "Pass", "Fill Enquiry details",true);
-			} else {
-				Assert.assertTrue(false, "User has facing issue while filling enquiry form");
-				test.log(LogStatus.FAIL, "User has facing issue while filling enquiry form");
-				//updateResult(indexSI++, "Fill Enquiry Details"," Issue while filling enquiry details", "Fail", "Fill Enquiry details",true);
-			}
+				enquiry.To_Fill_Customer_Enquiry_Details(Name, email, Description, Mobile);
+				boolean msg2 = enquiry.To_verify_Customer_Enquiry_form();
+				if (msg2 == true) {
+					Assert.assertTrue(true, "User has successfully Fill enquiry form");
+					test.log(LogStatus.PASS, "User has successfully Fill enquiry form");
+					//updateResult(indexSI++, "Fill Enquiry Details"," Enquiry details filled succusfully", "Pass", "Fill Enquiry details",true);
+				} else {
+					Assert.assertTrue(false, "User has facing issue while filling enquiry form");
+					test.log(LogStatus.FAIL, "User has facing issue while filling enquiry form");
+					//updateResult(indexSI++, "Fill Enquiry Details"," Issue while filling enquiry details", "Fail", "Fill Enquiry details",true);
+				}
 			}
 		} catch (Exception es) {
 			System.out.println("Exceptions in enquiry form is" + es.getMessage());
@@ -165,17 +162,17 @@ public class TestRunner extends TestBase {
 			}
 			else
 			{
-			property.To_Fill_postproperty_details(property_type, bathroom, bedroom, Furnished, description, first_name, email_id, password, city, mobile);
-			boolean msg3 = property.verifypostpropertyPage();
-			if (msg3 == true) {
-				test.log(LogStatus.PASS, "User has successfully post property details");
-				//updateResult(indexSI++, "Fill Post Property Details","property details posted Succusfully", "Pass", "Fill Post Property details",true);
-			} else {
-				Assert.assertTrue(false, "issue while filling post property details");
-				test.log(LogStatus.FAIL, "property is not posted due to some issue");
-				
-				//updateResult(indexSI++, "Fill Property Requirment","Issue while filling property details", "Fail", "Fill Post Property details",true);
-			}
+				property.To_Fill_postproperty_details(property_type, bathroom, bedroom, Furnished, description, first_name, email_id, password, city, mobile);
+				boolean msg3 = property.verifypostpropertyPage();
+				if (msg3 == true) {
+					test.log(LogStatus.PASS, "User has successfully post property details");
+					//updateResult(indexSI++, "Fill Post Property Details","property details posted Succusfully", "Pass", "Fill Post Property details",true);
+				} else {
+					Assert.assertTrue(false, "issue while filling post property details");
+					test.log(LogStatus.FAIL, "property is not posted due to some issue");
+
+					//updateResult(indexSI++, "Fill Property Requirment","Issue while filling property details", "Fail", "Fill Post Property details",true);
+				}
 			}
 		} catch (Exception ex) {
 			System.out.println("Exception is " + ex.getMessage());
@@ -197,16 +194,16 @@ public class TestRunner extends TestBase {
 		}
 		else
 		{
-		loan.to_fill_Homeloan_Details(Loan_Amt,Name, Mobile, Email, Pre_Bank, Bank_Name);
-		boolean msg= loan.To_verify_Homeloan_details();
-		if(msg==true){
-			test.log(LogStatus.PASS, "Home Loan Enquiry fill succussfully");}
-		else{
-			test.log(LogStatus.FAIL, "There is some issue while filling details");
-			Assert.assertTrue(false,"Test Case failed");
+			loan.to_fill_Homeloan_Details(Loan_Amt,Name, Mobile, Email, Pre_Bank, Bank_Name);
+			boolean msg= loan.To_verify_Homeloan_details();
+			if(msg==true){
+				test.log(LogStatus.PASS, "Home Loan Enquiry fill succussfully");}
+			else{
+				test.log(LogStatus.FAIL, "There is some issue while filling details");
+				Assert.assertTrue(false,"Test Case failed");
 			}
-	}}
-	
+		}}
+
 	@DataProvider
 	public Object[][] AgentSearchData() {
 		Object[][] data = getData("Datasheet.xlsx", "Agent_Search");
@@ -223,17 +220,17 @@ public class TestRunner extends TestBase {
 		}
 		else
 		{
-		test.log(LogStatus.INFO, "To search Agent Details");
-		agent_search.To_Perform_Agent_Search(ServiceType, oprating_city ,Locality,Dealing,Property_Handle);
-		boolean msg= agent_search.To_verify_Agent_Search_Details(Agent_Name,Agent_Code);
-		if(msg==true){
-			test.log(LogStatus.PASS, "Agent Search page succussfully verified");} 
-		else{
-			test.log(LogStatus.FAIL, "There is some issue while Verifying details");
-			Assert.assertTrue(false,"Test Case failed");}
+			test.log(LogStatus.INFO, "To search Agent Details");
+			agent_search.To_Perform_Agent_Search(ServiceType, oprating_city ,Locality,Dealing,Property_Handle);
+			boolean msg= agent_search.To_verify_Agent_Search_Details(Agent_Name,Agent_Code);
+			if(msg==true){
+				test.log(LogStatus.PASS, "Agent Search page succussfully verified");} 
+			else{
+				test.log(LogStatus.FAIL, "There is some issue while Verifying details");
+				Assert.assertTrue(false,"Test Case failed");}
 		}
 	}
-	
+
 	@Test( priority = 2)
 	public void To_Verify_EMI_CalculatorPage()
 	{
@@ -245,7 +242,7 @@ public class TestRunner extends TestBase {
 			test.log(LogStatus.FAIL, "There is some issue while Verifying EMI Calculation details");
 			Assert.assertTrue(false,"Test Case failed");}
 	}
-	
 
-	
+
+
 }

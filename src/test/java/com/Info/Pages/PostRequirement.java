@@ -54,13 +54,15 @@ public class PostRequirement {
 	public void select_property_type(String property_type)
 	{
 		Select property=new Select(driver.findElement(Property_Type));
-		property.selectByValue("Residential House");	
+		property.selectByValue("Residential House");
+		log.info("User has select property type as:-"+property_type);
 	}
 
 	public void select_property_City(String Prop_city)
 	{
 		Select Property_city=new Select(driver.findElement(city));
 		Property_city.selectByValue(Prop_city);	
+		log.info("User has select property city as:-"+Prop_city);
 	}
 
 	public void select_Number_of_bedroom()
@@ -85,6 +87,7 @@ public class PostRequirement {
 
 		Select max=new Select(driver.findElement(Budget_max));
 		max.selectByIndex(4);
+		log.info("User has select Min And Max budget as:-"+"20 Lakh"+"70 Lakh");
 	}
 
 	public void User_has_Enter_capchya_answer()
@@ -103,8 +106,6 @@ public class PostRequirement {
 	{
 		int value = rand.nextInt(300);
 		String Email = String.valueOf(value)+email;
-		System.out.println("Random email"+Email);
-
 		log.info("User has Entering Registration details");
 		driver.findElement(UserName).sendKeys(username);
 		driver.findElement(User_email).sendKeys(Email);

@@ -46,6 +46,7 @@ public class EMI_CAL extends TestBase {
 	}
 	public void To_Fill_Emi_Details()
 	{
+		log.info("User has filling EMI details");
 		driver.findElement(txt_Amout).sendKeys("145000");
 		driver.findElement(txt_Tenure).sendKeys("5");
 		driver.findElement(txt_rate).sendKeys("11.5");
@@ -59,7 +60,7 @@ public class EMI_CAL extends TestBase {
 		To_Fill_Emi_Details();
 		String ele=driver.findElement(txtEmi).getAttribute("value");
 		float value=Float.parseFloat(ele);
-		System.out.println("Size is"+ele);
+	
 		if(value>0)
 		{
 			test.log(LogStatus.INFO, "Verifying EMi calculator functionality");

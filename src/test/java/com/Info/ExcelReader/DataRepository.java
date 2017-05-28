@@ -121,7 +121,7 @@ public class DataRepository {
 
 	public static void main(String[] args) {
 		//String path = System.getProperty("E:\\StudyWorkpace\\Data_Framwork_Using_Selenium\\TestDataFile\\Datasheet.xlsx");
-		String path = "E:\\StudyWorkpace\\com.automation.maven\\TestDataFile\\Datasheet.xlsx";
+		String path = "E:\\GIT_Project\\com.automation.maven\\TestDataFile\\Datasheet.xlsx";
 		DataRepository obj = new DataRepository(path);
 		 //System.out.println(obj.getCellData("PUNE", "password", 2));
 

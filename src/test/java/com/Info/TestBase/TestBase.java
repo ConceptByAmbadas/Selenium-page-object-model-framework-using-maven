@@ -59,7 +59,7 @@ public class TestBase {
 
 	public TestBase() {
 		try {
-			File src = new File("E:\\StudyWorkpace\\com.automation.maven\\ConfigFile\\Config.property");
+			File src = new File("E:\\GIT_Project\\com.automation.maven\\ConfigFile\\Config.property");
 			FileInputStream fis = new FileInputStream(src);
 			prop = new Properties();
 			prop.load(fis);
@@ -85,7 +85,7 @@ public class TestBase {
 		try
 		{
 			//report=new ExtentReports("E://Reports//Test"+System.currentTimeMillis()+".html",true);
-			report=new ExtentReports("E://StudyWorkpace//com.automation.maven//ReportGenration//Report"+System.currentTimeMillis()+".html",true);
+			report=new ExtentReports("E://GIT_Project//com.automation.maven//ReportGenration//Report"+System.currentTimeMillis()+".html",true);
 			report.addSystemInfo("HostName", "Pravin")
 			.addSystemInfo("Environment", "SIT")
 			.addSystemInfo("User","Ambadas")
@@ -188,7 +188,7 @@ public class TestBase {
 		Thread.sleep(sec * 1000);
 	}
 	public static Object[][] getData(String ExcelName, String testcase) {
-		DataRepository Data = new DataRepository("E:\\StudyWorkpace\\com.automation.maven\\TestDataFile\\Datasheet.xlsx");
+		DataRepository Data = new DataRepository("E:\\GIT_Project\\com.automation.maven\\TestDataFile\\Datasheet.xlsx");
 		int rowNum = Data.getRowCount(testcase);
 		System.out.println(rowNum);
 		int colNum = Data.getColumnCount(testcase);
@@ -213,7 +213,7 @@ public class TestBase {
 			TakesScreenshot tc = (TakesScreenshot) driver;
 			File src = tc.getScreenshotAs(OutputType.FILE);
 
-			dest = "E:\\StudyWorkpace\\com.automation.maven\\Screenshot\\" + time + ".png"; // for
+			dest = "E:\\GIT_Project\\com.automation.maven\\Screenshot\\" + time + ".png"; // for
 			// extent
 			// report
 
@@ -235,7 +235,7 @@ public class TestBase {
 			String View = "View";
 			String startDateTime = new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime());
 			// String userDirector = System.getProperty("user.dir");
-			String resultFile = "E:\\StudyWorkpace\\com.automation.maven\\ReportGenration\\TestHtmlReport.html";
+			String resultFile = "E:\\GIT_Project\\com.automation.maven\\ReportGenration\\TestHtmlReport.html";
 
 			File file = new File(resultFile);
 			System.out.println("file status is" + file.exists());

@@ -53,7 +53,7 @@ public class AgentSearch extends TestBase{
 
 	public void to_enter_Search_Details( String serviceType2,String oprating_city2,String locality2,String dealing2,String Property_Handle2)
 	{
-
+		log.info("User has filling Aget Search Details");
 		Select service=new Select(driver.findElement(ServiceType));
 		service.selectByValue(serviceType2);
 		Select city=new Select(driver.findElement(oprating_city));
@@ -74,7 +74,7 @@ public class AgentSearch extends TestBase{
 		click_on_AgentSearchTab_tab();
 		to_enter_Search_Details(serviceType2,oprating_city2,locality2,dealing2,property_Handle2);
 		to_Click_Submit_Details();
-		//To_verify_Agent_Search_Details(Agent_Name,Agent_Code);
+		
 	}
 
 	public boolean To_verify_Agent_Search_Details(String Agent_Name,String Agent_Code ) throws InterruptedException
@@ -83,19 +83,19 @@ public class AgentSearch extends TestBase{
 		
 		String view_agent_details=driver.findElement(By.xpath(".//*[@id='n']/table[3]/tbody/tr/td/table/tbody/tr[1]/td/font")).getText();
 		
-		System.out.println("msg  is"+view_agent_details);
+		
 		if(view_agent_details.contains(Agent_Name))
 		{
-			System.out.println("IN IF Message verified is"+view_agent_details);
+			
 			driver.findElement(btn_view_detail).click();
 			test.log(LogStatus.INFO, "User has click on view details button");
 			waitFor(1);
 			String Agent_id=driver.findElement(By.xpath(".//*[@id='n']/center/table/tbody/tr[4]/td[1]/table/tbody/tr[1]/td[2]/b")).getText();
-			System.out.println("Agent id is"+Agent_id);
-			System.out.println("Agent id is"+Agent_Code);
+			log.info("Agent id is"+Agent_id);
 			if(Agent_id.equalsIgnoreCase(Agent_Code)){
 				test.log(LogStatus.INFO, "Agent code succusfully verified on page");
 				test.log(LogStatus.PASS, "Agent code succusfully verified on page");
+				log.info("Agent code succusfully verified on page"+Agent_Code);
 				driver.findElement(Home).click();
 				return true;
 			}
@@ -107,9 +107,10 @@ public class AgentSearch extends TestBase{
 			
 		}
 		else {
-			System.out.println("IN IF Message verified is"+view_agent_details);
+		
 			test.log(LogStatus.INFO, "Agent details not found on page");
 			test.log(LogStatus.FAIL, "Agent code not found on page on page");
+			log.info("Agent code not found on page on page");
 			return false;
 		}
 		
